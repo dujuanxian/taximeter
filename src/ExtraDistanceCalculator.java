@@ -1,4 +1,4 @@
-public class ExtraPriceCalculator implements PriceCalculator{
+public class ExtraDistanceCalculator implements DistanceCalculator {
 
     @Override
     public double count(int distance) {

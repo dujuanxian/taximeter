@@ -1,4 +1,4 @@
-public class FlagPriceCalculator implements PriceCalculator{
+public class FlagDistanceCalculator implements DistanceCalculator {
 
     @Override
     public double count(int distance) {

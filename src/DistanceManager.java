@@ -4,17 +4,26 @@ public class DistanceManager {
     static final double extraPricePerKilometer = 1.20;
     static final double flagPrice = 6.00;
     static final double pricePerKilometer = 0.80;
+    static final double pricePerMin = 0.25;
 
-    public double countPrice(int distance) {
+    public double countPrice(int distance, int waitingTime) {
+        return countDistancePrice(distance) + countTimePrice(waitingTime);
+    }
+
+    private double countDistancePrice(int distance) {
         if (distance < flagDistance) {
-            return new FlagPriceCalculator().count(distance);
+            return new FlagDistanceCalculator().count(distance);
         }
         else if (distance < extraChargeDistance) {
-            return new NormalPriceCalculator().count(distance);
+            return new NormalDistanceCalculator().count(distance);
         }
         else {
-            return new ExtraPriceCalculator().count(distance);
+            return new ExtraDistanceCalculator().count(distance);
         }
+    }
+
+    private double countTimePrice(int waitingTime) {
+        return new WaitingTimePriceCalculator().count(waitingTime);
     }
 
 }

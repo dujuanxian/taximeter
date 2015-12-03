@@ -16,18 +16,25 @@ public class TaximeterTest {
     @Test
     public void shouldReturnFlagPrice() {
         int distance = 1;
-        assertThat(taximeter.getPrice(distance), is(6));
+        assertThat(taximeter.getPrice(distance, 0), is(6));
     }
 
     @Test
     public void shouldReturnPriceWith3KmDistance() {
         int distance = 3;
-        assertThat(taximeter.getPrice(distance), is(7));
+        assertThat(taximeter.getPrice(distance, 0), is(7));
     }
 
     @Test
     public void shouldReturnPriceWith9KmDistance() {
         int distance = 9;
-        assertThat(taximeter.getPrice(distance), is(12));
+        assertThat(taximeter.getPrice(distance, 0), is(12));
+    }
+
+    @Test
+    public void shouldReturnPriceWith9KmDistanceAnd2MinStopWaiting() {
+        int distance = 9;
+        int waitingTime = 2;
+        assertThat(taximeter.getPrice(distance, waitingTime), is(13));
     }
 }
