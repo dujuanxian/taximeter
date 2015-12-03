@@ -5,8 +5,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TaximeterTest {
     @Test
-    public void shouldReturnStartingFare() {
+    public void shouldReturnFlagPrice() {
         Taximeter taximeter = new Taximeter();
-        assertThat(taximeter.getPrice(), is(6.8));
+        assertThat(taximeter.getPrice(), is(6));
     }
 }

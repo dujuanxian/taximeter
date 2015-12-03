@@ -1,5 +1,7 @@
 public class Taximeter {
-    public double getPrice() {
-        return 6.8;
+    static final double flagPrice = 6;
+
+    public int getPrice() {
+        return (int) Math.round(flagPrice);
     }
 }
