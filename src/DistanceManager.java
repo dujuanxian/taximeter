@@ -1,9 +1,9 @@
 public class DistanceManager {
     static final int flagDistance = 2;
     static final int extraChargeDistance = 8;
-    static final double extraPricePerKilometer = 0.8 * 0.5;
-    static final double flagPrice = 6;
-    static final double pricePerKilometer = 0.8;
+    static final double extraPricePerKilometer = 1.20;
+    static final double flagPrice = 6.00;
+    static final double pricePerKilometer = 0.80;
 
     public double countPrice(int distance) {
         if (distance < flagDistance) {
