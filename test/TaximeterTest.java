@@ -24,4 +24,10 @@ public class TaximeterTest {
         int distance = 3;
         assertThat(taximeter.getPrice(distance), is(7));
     }
+
+    @Test
+    public void shouldReturnPriceWith9KmDistance() {
+        int distance = 9;
+        assertThat(taximeter.getPrice(distance), is(12));
+    }
 }
